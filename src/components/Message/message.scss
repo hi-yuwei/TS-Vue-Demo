@@ -1,0 +1,127 @@
+.m-message-container {
+  position: fixed;
+  z-index: 1010;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+.m-message {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 14px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, .85);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, .3);
+  color: #fff;
+  max-width: 90%;
+
+  pointer-events: all;
+  position: relative;
+
+  &-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+  }
+
+  &-wrapper.m-message-center {
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  &-loading {
+    position: relative;
+    top: -120px;
+  }
+
+  &-type-img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-left: -30px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+
+  .m-message-wrap {
+    // max-width: 500px;
+    padding-left: 30px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .m-message-content {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+
+    line-height: 25px;
+    padding-left: 5px;
+  }
+
+  &__close {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-size: 13px;
+    color: #646464;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: -7px;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      color: #F56C6C;
+    }
+  }
+}
+
+.m-message-fade-enter-active {
+  animation: m-message-fade-in 0.3s;
+}
+
+.m-message-fade-leave-active {
+  animation: m-message-fade-out 0.3s;
+}
+
+@keyframes m-message-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes m-message-fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

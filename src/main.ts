@@ -8,6 +8,13 @@ import router from "./router"
 import token from "@/utils/token"
 token.setToken()
 
+import "@/utils/rem"
+import "@/utils/dayjs"
+import "@/utils/filters"
+
+import Message from "@/components/Message"
+Vue.use(Message)
+
 Vue.config.productionTip = false
 
 new Vue({
