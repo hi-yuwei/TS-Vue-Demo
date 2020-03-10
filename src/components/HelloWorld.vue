@@ -22,7 +22,7 @@ import { Component, Vue, Prop, PropSync, Watch, Emit } from "vue-property-decora
 
 @Component
 export default class HelloWorld extends Vue {
-  school = "yuwei"
+  school: string = "yuwei"
 
   @Prop({
     type: String,
@@ -44,11 +44,16 @@ export default class HelloWorld extends Vue {
   }
   mounted() {
     console.log("mounted 声明周期")
+    this.showName("哈哈哈哈")
   }
 
   @Emit("hiBeck")
   sayHeillo() {
     return "您好，yuwei"
+  }
+
+  showName(name: string): void {
+    console.log(name)
   }
 }
 </script>

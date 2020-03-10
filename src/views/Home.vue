@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your " :age.sync="age" @hiBeck="hi" />
+    <HelloWorld msg="Welcome to Your " :age.sync="age" @hiBeck="hi"></HelloWorld>
     <p>年龄：{{age}}</p>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      age: 30
+      age: 3
     }
   },
   methods: {
